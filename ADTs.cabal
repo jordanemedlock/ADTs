@@ -57,7 +57,7 @@ executable ADTs
   -- other-extensions:
 
   -- Other library packages from which modules are imported.
-  build-depends:       base >=4.8 && <4.9, Chart >=1.6 && <1.7, Chart-cairo >=1.6 && <1.7, time >=1.5 && <1.6, deepseq
+  build-depends:       base >=4.8 && <4.9, Chart >=1.6 && <1.7, Chart-cairo >=1.6 && <1.7, time >=1.5 && <1.6, deepseq, random
 
   -- Directories containing source files.
   -- hs-source-dirs:

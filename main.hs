@@ -3,8 +3,9 @@ import Plotter
 import Timer
 import Set
 import Control.DeepSeq
+import System.Random
 
-makeSet n = foldl push empty [1..n]
+makeSet n = foldl push empty (take n $ randoms (mkStdGen 8))
 
 pushesAlreadyIn set = push set 1
 pushesNotIn set = push set 0

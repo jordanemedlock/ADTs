@@ -28,6 +28,13 @@
   (major1) == 1 && (major2) <  4 || \
   (major1) == 1 && (major2) == 4 && (minor) <= 1)
 
+/* package random-1.1 */
+#define VERSION_random "1.1"
+#define MIN_VERSION_random(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  1 || \
+  (major1) == 1 && (major2) == 1 && (minor) <= 0)
+
 /* package time-1.5.0.1 */
 #define VERSION_time "1.5.0.1"
 #define MIN_VERSION_time(major1,major2,minor) (\
@@ -112,5 +119,5 @@
   (major1) == 0 && (major2) <  29 || \
   (major1) == 0 && (major2) == 29 && (minor) <= 0)
 
-#define CURRENT_PACKAGE_KEY "ADTs_9TWLh3rVG4x3ooyISzARl1"
+#define CURRENT_PACKAGE_KEY "ADTs_1ivJ93tEz4T26zTpYtArmv"
 

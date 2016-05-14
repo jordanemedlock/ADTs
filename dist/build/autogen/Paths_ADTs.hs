@@ -17,7 +17,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/Users/jem/.cabal/bin"
-libdir     = "/Users/jem/.cabal/lib/x86_64-osx-ghc-7.10.2/ADTs-0.1.0.0-9TWLh3rVG4x3ooyISzARl1"
+libdir     = "/Users/jem/.cabal/lib/x86_64-osx-ghc-7.10.2/ADTs-0.1.0.0-1ivJ93tEz4T26zTpYtArmv"
 datadir    = "/Users/jem/.cabal/share/x86_64-osx-ghc-7.10.2/ADTs-0.1.0.0"
 libexecdir = "/Users/jem/.cabal/libexec"
 sysconfdir = "/Users/jem/.cabal/etc"

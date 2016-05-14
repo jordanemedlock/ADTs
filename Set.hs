@@ -2,6 +2,7 @@
 module Set where
 import Control.DeepSeq
 import GHC.Generics (Generic)
+import Data.List (foldl')
 
 class Set s where
   push :: (Ord a) => s a -> a -> s a
@@ -59,9 +60,48 @@ pushTree (Fork a l r) tree@(Fork a' _ _)
   | a == a' = Fork a l r
 
 height Leaf = 0
-height (Fork a l r) = 1 + max (height l) (height r)  
+height (Fork a l r) = 1 + max (height l) (height r)
 
   --       10
   --     5   15
   --   3  8 13 20
   --      11 14 16 21
+
+
+-- 3
+--   5
+--     8
+--       10
+--         11
+
+
+--     3
+--    2   4
+--   1      5
+
+-- START -> | 1 | <-> | 2 | <-> | 3 | <- END
+-- [1,2,3]
+-- 1 : 2 : 3 : []
+
+(-<-) = flip queuePut
+
+a ->- () = queueGet a
+
+
+data Queue a = MkQueue [a] [a]
+
+mkQueue :: Queue a
+mkQueue = MkQueue [] []
+
+queuePut :: a -> Queue a -> Queue a
+queuePut item (MkQueue ins outs) = MkQueue (item:ins) outs
+
+queuePutList :: [a] -> Queue a -> Queue a
+queuePutList xs q = foldl' (flip queuePut) q xs
+
+queueGet :: Queue a -> (a, Queue a)
+queueGet (MkQueue ins (item:rest)) = (item, MkQueue ins rest)
+queueGet (MkQueue ins []) = queueGet (MkQueue [] (reverse ins))
+
+queueEmpty :: Queue a -> Bool
+queueEmpty (MkQueue ins outs) = null ins && null outs
